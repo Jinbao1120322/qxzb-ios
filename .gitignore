@@ -23,3 +23,6 @@ __pycache__/
 
 # 源码打包产物
 qxzb-ios-src.zip
+
+# 下载产物
+dist/
