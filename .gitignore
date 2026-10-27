@@ -1,0 +1,25 @@
+# 构建产物
+build/
+DerivedData/
+*.xcarchive
+Payload/
+*.ipa
+*.dSYM
+
+# H5 全量包（~500MB，构建时从 CDN 抓取，不入库）
+web/*
+!web/.gitkeep
+
+# Xcode / macOS
+.DS_Store
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Python
+__pycache__/
+*.pyc
+
+# 源码打包产物
+qxzb-ios-src.zip

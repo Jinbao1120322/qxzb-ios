@@ -1,0 +1,88 @@
+name: Build unsigned IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    paths-ignore:
+      - 'web/**'
+      - 'README.md'
+
+concurrency:
+  group: build-ipa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-14
+    timeout-minutes: 150
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          python3 --version
+          sw_vers
+
+      # 仓库默认不提交 ~500MB 的 H5 资源；构建时从公开 CDN 全量抓取。
+      # 若你已把 web/ 提交进仓库，此步自动跳过。
+      - name: Fetch H5 bundle (full)
+        run: |
+          if [ -f web/index.html ]; then
+            echo "web/ already present, skip fetch"
+          else
+            python3 tools/fetch_h5.py --out web --jobs 32 || true
+          fi
+          echo "--- web 概览 ---"
+          du -sh web 2>/dev/null || true
+          ls -la web | head -20
+          test -f web/index.html
+          test -f web/manifest.json
+          test -f web/js.zip
+
+      - name: Install XcodeGen
+        run: |
+          brew install xcodegen || brew upgrade xcodegen
+          xcodegen --version
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build (unsigned, device)
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project QXZB.xcodeproj \
+            -scheme QXZB \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_ENTITLEMENTS="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          APP="build/Build/Products/Release-iphoneos/QXZB.app"
+          echo "APP=$APP"
+          test -d "$APP" || { echo "build output missing"; exit 1; }
+          du -sh "$APP"
+          rm -rf Payload QXZB-unsigned.ipa
+          mkdir -p Payload
+          cp -R "$APP" Payload/
+          zip -qry QXZB-unsigned.ipa Payload
+          ls -lh QXZB-unsigned.ipa
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: QXZB-unsigned-ipa
+          path: QXZB-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 30
