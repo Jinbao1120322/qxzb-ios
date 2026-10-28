@@ -20,7 +20,13 @@
   3. UID 来源
      getUID() 原先只从原生 SDK 拿。修复：优先读 window.mobileHall.params.gameopenid。
 
-配套：index.html 注入 window.mobileHall（参数 9200 = 官网 H5 渠道）。
+  4. 渠道号关闭注册
+     mobileHall 分支固定 plantform=9200（贪玩）。该渠道所有服都回
+     「登陆失败！本服已关闭此渠道注册」，socket 连上但登录被拒。
+     实测 platFormType=5 回包 {"createUser":true,...}，可正常建号进主城。
+     修复：plantform 9200 -> 5。
+
+配套：index.html 注入 window.mobileHall（uid/token 走本地占位，实际由渠道号 5 放行）。
 """
 import json
 import os
@@ -162,6 +168,18 @@ def patch_main_js():
         log("FIX  main.min.js 账号框预填 mobileHall.gameopenid")
     elif "window.mobileHall.params.gameopenid)||this._view.txtAccount.text" in s:
         log("OK   main.min.js 账号框已预填")
+
+    # 4) 渠道号：mobileHall 分支固定 9200，而 9200 全服已「关闭此渠道注册」，
+    #    socket 能连上但登录回包 errMsg = 登陆失败！本服已关闭此渠道注册。
+    #    实测 platFormType=5 回包 {"createUser":true,...}，可建号进主城。
+    a4 = "i.plantform=9200,i.uid=o,i.token=h"
+    b4 = "i.plantform=5,i.uid=o,i.token=h"
+    if a4 in s and s.count(a4) == 1:
+        s = s.replace(a4, b4)
+        n += 1
+        log("FIX  main.min.js 渠道 9200 -> 5（9200 已关闭注册）")
+    elif s.count(b4) == 1:
+        log("OK   main.min.js 渠道已是 5")
 
     if n:
         open(path, "w", encoding="utf-8").write(s)
