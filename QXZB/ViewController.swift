@@ -33,7 +33,9 @@ final class ViewController: UIViewController {
         }
         QLog("web root = \(webRoot.path)")
 
-        LocalHTTPServer.shared.start(root: webRoot) { [weak self] port in
+        let overlay = prepareOverlay()
+
+        LocalHTTPServer.shared.start(root: webRoot, overlay: overlay) { [weak self] port in
             guard let self = self else { return }
             guard let port = port, port > 0 else {
                 QLog("FATAL: 本地 HTTP 服务启动失败")
@@ -41,11 +43,44 @@ final class ViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.setupWebView()
-                let url = URL(string: "http://127.0.0.1:\(port)/index.html")!
+                // 用 server 的实际端口拼 URL，闭包参数在重入时可能不是最新值
+                let realPort = LocalHTTPServer.shared.port > 0 ? LocalHTTPServer.shared.port : port
+                let url = URL(string: "http://127.0.0.1:\(realPort)/index.html")!
                 QLog("loading \(url.absoluteString)")
                 self.webView.load(URLRequest(url: url))
             }
         }
+    }
+
+    /// 热更新目录：Documents/web。请求同名文件时优先用它，
+    /// 改 tables.js / server.js 把文件丢进来重启就生效，不用重新打包安装。
+    private func prepareOverlay() -> URL? {
+        let fm = FileManager.default
+        guard let docs = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        let web = docs.appendingPathComponent("web", isDirectory: true)
+        if !fm.fileExists(atPath: web.path) {
+            try? fm.createDirectory(at: web, withIntermediateDirectories: true)
+        }
+        let readme = docs.appendingPathComponent("热更新说明.txt")
+        if !fm.fileExists(atPath: readme.path) {
+            let txt = """
+            把要替换的文件按「相同相对路径」放进 web/ 目录，然后杀掉 App 重开，即生效。
+            删掉文件就回退到 App 内置版本。
+
+            例：
+              web/offline/tables.js    覆盖离线数据表
+              web/offline/server.js    覆盖离线服务端
+              web/offline/ws_shim.js   覆盖协议接管层
+              web/index.html           覆盖页面（谨慎，挂错会白屏）
+
+            文件用爱思助手 / Finder 文件共享 / iMazing 拖进「七雄争霸」的 Documents 即可。
+            """
+            try? txt.write(to: readme, atomically: true, encoding: .utf8)
+        }
+        QLog("overlay dir = \(web.path)")
+        return web
     }
 
     private func setupWebView() {

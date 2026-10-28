@@ -14,6 +14,9 @@ final class LocalHTTPServer {
 
     private(set) var port: UInt16 = 0
     private var root: URL = URL(fileURLWithPath: "/")
+    /// 覆盖层：沙盒 Documents/web。请求同名文件时优先用它，
+    /// 这样改 tables.js / server.js 只要把文件丢进 Documents 重启即可，不用重新打包。
+    private var overlay: URL?
     private var listener: NWListener?
     private let queue = DispatchQueue(label: "qxzb.http.server", qos: .userInitiated)
     private var reported = false
@@ -23,8 +26,14 @@ final class LocalHTTPServer {
         return URL(string: "http://127.0.0.1:\(port)/")
     }
 
-    func start(root: URL, completion: @escaping (UInt16?) -> Void) {
+    func start(root: URL, overlay: URL? = nil, completion: @escaping (UInt16?) -> Void) {
         self.root = root.standardizedFileURL
+        if let ov = overlay {
+            let std = ov.standardizedFileURL
+            if FileManager.default.fileExists(atPath: std.path) {
+                self.overlay = std
+            }
+        }
         do {
             let l = try NWListener(using: .tcp)
             l.newConnectionHandler = { [weak self] conn in
@@ -36,6 +45,7 @@ final class LocalHTTPServer {
                 case .ready:
                     self.port = l.port?.rawValue ?? 0
                     QLog("HTTP server ready port=\(self.port) root=\(self.root.path)")
+                    QLog("overlay = \(self.overlay?.path ?? "(未启用，全部读 App 内置)")")
                     completion(self.port)
                 case .failed(let err):
                     QLog("HTTP server failed: \(err)")
@@ -93,15 +103,31 @@ final class LocalHTTPServer {
         path = path.removingPercentEncoding ?? path
         if path.isEmpty || path == "/" { path = "/index.html" }
 
-        let rel = path.hasPrefix("/") ? String(path.dropFirst()) : path
-        var fileURL = root.appendingPathComponent(rel)
+        let rel0 = path.hasPrefix("/") ? String(path.dropFirst()) : path
+        var rel = rel0.isEmpty ? "index.html" : rel0
 
+        // root 下是目录 -> 补 index.html（overlay 目录不展开，只覆盖具体文件）
         var isDir: ObjCBool = false
-        if FileManager.default.fileExists(atPath: fileURL.path, isDirectory: &isDir), isDir.boolValue {
-            fileURL.appendPathComponent("index.html")
+        let rootCand = root.appendingPathComponent(rel)
+        if FileManager.default.fileExists(atPath: rootCand.path, isDirectory: &isDir), isDir.boolValue {
+            rel += rel.hasSuffix("/") ? "index.html" : "/index.html"
         }
-        // 防目录穿越
-        guard fileURL.standardizedFileURL.path.hasPrefix(root.path) else {
+
+        var fileURL = root.appendingPathComponent(rel)
+        // 覆盖层优先：同名文件存在就用它
+        if let ov = overlay {
+            let cand = ov.appendingPathComponent(rel)
+            var d2: ObjCBool = false
+            if FileManager.default.fileExists(atPath: cand.path, isDirectory: &d2), !d2.boolValue {
+                let candPath = cand.standardizedFileURL.path
+                if candPath.hasPrefix(ov.path) { fileURL = cand }
+            }
+        }
+        // 防目录穿越（两个根都要校验）
+        let std = fileURL.standardizedFileURL.path
+        let inRoot = std.hasPrefix(root.path)
+        let inOverlay = overlay.map { std.hasPrefix($0.path) } ?? false
+        guard inRoot || inOverlay else {
             return sendError(conn, 403)
         }
         guard let attrs = try? FileManager.default.attributesOfItem(atPath: fileURL.path),
