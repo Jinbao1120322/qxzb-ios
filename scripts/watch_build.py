@@ -23,14 +23,32 @@ def api(path):
         return json.load(r)
 
 
-runs = api(f"/repos/{REPO}/actions/workflows/{WF}/runs?per_page=1")["workflow_runs"]
-if not runs:
+def latest_run():
+    runs = api(f"/repos/{REPO}/actions/workflows/{WF}/runs?per_page=1")["workflow_runs"]
+    return runs[0] if runs else None
+
+
+def run_age_seconds(run):
+    from datetime import datetime, timezone
+    ts = run["created_at"].replace("Z", "+00:00")
+    return (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds()
+
+
+run = latest_run()
+# 等新一次 run 出现（刚 push 完可能有几十秒延迟），最多等 3 分钟
+for _ in range(12):
+    if run and run_age_seconds(run) < 300:
+        break
+    time.sleep(15)
+    run = latest_run()
+
+if not run:
     print("[watch] 没有找到运行记录", flush=True)
     sys.exit(1)
-rid = runs[0]["id"]
-print(f"[watch] run {rid} status={runs[0]['status']}", flush=True)
+rid = run["id"]
+print(f"[watch] run {rid} status={run['status']} age={int(run_age_seconds(run))}s", flush=True)
 
-last, st, cc = None, runs[0]["status"], runs[0].get("conclusion") or ""
+last, st, cc = None, run["status"], run.get("conclusion") or ""
 deadline = time.time() + 3600
 while time.time() < deadline:
     d = api(f"/repos/{REPO}/actions/runs/{rid}")

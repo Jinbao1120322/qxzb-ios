@@ -13,6 +13,12 @@ du -sh web
 echo "[2/5] 生成 Xcode 工程"
 command -v xcodegen >/dev/null 2>&1 || brew install xcodegen
 xcodegen generate
+# 兼容 Xcode 15：把项目格式强制降到 objectVersion 56
+PBX=QXZB.xcodeproj/project.pbxproj
+sed -i '' -E 's/objectVersion = [0-9]+;/objectVersion = 56;/' "$PBX"
+sed -i '' -E 's/compatibilityVersion = "Xcode [0-9.]+";/compatibilityVersion = "Xcode 14.0";/' "$PBX"
+sed -i '' -E '/preferredProjectObjectVersion = [0-9]+;/d' "$PBX"
+grep -E 'objectVersion|compatibilityVersion' "$PBX" | head -3
 
 echo "[3/5] 编译 (未签名)"
 xcodebuild \
