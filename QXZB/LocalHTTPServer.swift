@@ -138,14 +138,8 @@ final class LocalHTTPServer {
     }
 
     private func sendChunk(_ conn: NWConnection, handle: FileHandle) {
-        let chunk: Data
-        do {
-            chunk = try handle.read(upToCount: 256 * 1024) ?? Data()
-        } catch {
-            try? handle.close()
-            conn.cancel()
-            return
-        }
+        // iOS 13 兼容写法（read(upToCount:) 需要 13.4+）
+        let chunk = handle.readData(ofLength: 256 * 1024)
         if chunk.isEmpty {
             try? handle.close()
             conn.cancel()
