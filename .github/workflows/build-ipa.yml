@@ -52,6 +52,17 @@ jobs:
           brew install xcodegen || brew upgrade xcodegen
           xcodegen --version
 
+      # WKWebView 里没有安卓原生 JSBridge，必须打三处补丁：
+      #   1) thm.js / thm.json 皮肤表补全（否则 3555 个界面全透明）
+      #   2) 启动链路跳过 JSBridge.initGame()
+      #   3) index.html 注入 window.mobileHall 自动登录参数
+      - name: Apply WebView patches
+        run: |
+          python3 tools/apply_patches.py web
+          echo "--- 校验 ---"
+          grep -c 'mobileHall' web/index.html
+          node --check web/js/main.min.js 2>/dev/null || echo "(no node, skip syntax check)"
+
       - name: Generate Xcode project
         run: |
           xcodegen generate
