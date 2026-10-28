@@ -26,3 +26,6 @@ qxzb-ios-src.zip
 
 # 下载产物
 dist/
+
+# GCM 诊断日志
+gcm-diagnose*
