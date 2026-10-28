@@ -42,8 +42,10 @@ targets:
       path: QXZB/Info.plist
       properties:
         CFBundleDisplayName: 七雄争霸
-        CFBundleShortVersionString: "1.0.0"
-        CFBundleVersion: "1"
+        # 必须走 build setting，否则写死在这里会盖掉 MARKETING_VERSION，
+        # bump_version.py 改了也不生效（repack 的文件名就会一直是 1.0.0）
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSRequiresIPhoneOS: true
         UILaunchScreen: {}
         UIRequiresFullScreen: true
