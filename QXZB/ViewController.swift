@@ -22,6 +22,22 @@ final class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool { true }
     override var prefersHomeIndicatorAutoHidden: Bool { true }
 
+    // WKWebView 会把多指手势吃掉（两指长按调不出日志），改用摇一摇。
+    override var canBecomeFirstResponder: Bool { true }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        becomeFirstResponder()
+    }
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard motion == .motionShake else { return }
+        logView.isHidden = !logView.isHidden
+        if !logView.isHidden {
+            logView.text = logLines.joined(separator: "\n")
+        }
+    }
+
     // MARK: - 启动流程
 
     private func boot() {
