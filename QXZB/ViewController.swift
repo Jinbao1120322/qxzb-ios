@@ -137,7 +137,20 @@ final class ViewController: UIViewController {
         logView.isSelectable = false
         logView.textContainerInset = UIEdgeInsets(top: 30, left: 6, bottom: 6, right: 6)
         logView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleLog)))
+        // 默认隐藏：日志浮层盖住半屏，正常游玩时不该出现。
+        // 需要排查时两指长按 1.5 秒切换出来，再点一下收起。
+        logView.isHidden = true
         view.addSubview(logView)
+
+        let lp = UILongPressGestureRecognizer(target: self, action: #selector(showLogByGesture(_:)))
+        lp.numberOfTouchesRequired = 2
+        lp.minimumPressDuration = 1.5
+        view.addGestureRecognizer(lp)
+    }
+
+    @objc private func showLogByGesture(_ g: UILongPressGestureRecognizer) {
+        guard g.state == .began else { return }
+        logView.isHidden = !logView.isHidden
     }
 
     @objc private func toggleLog() {
