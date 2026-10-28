@@ -49,8 +49,12 @@ def main():
         "--user-data-dir=" + profile,
         "--screenshot=" + out,
         "--virtual-time-budget=" + budget,
-        url,
     ]
+    netlog = os.environ.get("NETLOG")
+    if netlog:
+        cmd.append("--log-net-log=" + os.path.abspath(netlog))
+        cmd.append("--net-log-capture-mode=Everything")
+    cmd.append(url)
     try:
         subprocess.run(cmd, timeout=150, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     except subprocess.TimeoutExpired:

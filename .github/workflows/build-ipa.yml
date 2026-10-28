@@ -36,12 +36,16 @@ jobs:
           else
             python3 tools/fetch_h5.py --out web --jobs 32 || true
           fi
+          # eui 主题文件不在 default.res.json 清单里，必须单独补抓（缺它会卡在加载 100%）
+          python3 tools/fetch_extra.py --web web --jobs 32 || true
           echo "--- web 概览 ---"
           du -sh web 2>/dev/null || true
           ls -la web | head -20
           test -f web/index.html
           test -f web/manifest.json
           test -f web/js.zip
+          test -f web/resource/default.thm.json
+          echo "thm.json 大小: $(stat -f%z web/resource/default.thm.json 2>/dev/null || stat -c%s web/resource/default.thm.json)"
 
       - name: Install XcodeGen
         run: |
