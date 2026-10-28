@@ -112,3 +112,26 @@ jobs:
           path: QXZB-unsigned.ipa
           if-no-files-found: error
           retention-days: 30
+
+      # 只传「非 web」部分（二进制/Frameworks/Assets.car/Info.plist，几 MB）。
+      # 国内直连 GitHub artifacts 只有 ~50KB/s，325MB 要一个多小时；
+      # 本地已有打好补丁的 web/，只需要这个包里的新二进制来重封。
+      - name: Upload app payload only (no web)
+        run: |
+          APP="build/Build/Products/Release-iphoneos/QXZB.app"
+          rm -rf mini && mkdir -p mini/Payload
+          cp -R "$APP" mini/Payload/
+          rm -rf mini/Payload/QXZB.app/web
+          mkdir -p mini/Payload/QXZB.app/web
+          echo placeholder > mini/Payload/QXZB.app/web/.keep
+          cd mini && zip -qry QXZB-app-payload.zip Payload
+          ls -lh QXZB-app-payload.zip
+          shasum -a 256 QXZB-app-payload.zip
+
+      - name: Upload payload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: QXZB-app-payload
+          path: mini/QXZB-app-payload.zip
+          if-no-files-found: error
+          retention-days: 30
