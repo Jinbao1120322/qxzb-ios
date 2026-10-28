@@ -150,6 +150,19 @@ def patch_main_js():
     elif "this.getDefaultServerData(),u.GameConfig.isQQ" in s:
         log("OK   main.min.js 启动链路已处理")
 
+    # 3) 账号框：原生 SDK 会填，WebView 下为空，
+    #    而 loginHandler 有一道 txtAccount.text.length<=0 的拦截 -> 点登录无反应。
+    a3 = "this._view.bmLoginBg.$setVisible(!1),this._view.txtAccount.$setVisible(!1)"
+    b3 = ("this._view.bmLoginBg.$setVisible(!1),this._view.txtAccount.$setVisible(!1),"
+          "this._view.txtAccount.text=(window.mobileHall&&window.mobileHall.params&&"
+          "window.mobileHall.params.gameopenid)||this._view.txtAccount.text")
+    if a3 in s and "window.mobileHall.params.gameopenid)||this._view.txtAccount.text" not in s:
+        s = s.replace(a3, b3)
+        n += 1
+        log("FIX  main.min.js 账号框预填 mobileHall.gameopenid")
+    elif "window.mobileHall.params.gameopenid)||this._view.txtAccount.text" in s:
+        log("OK   main.min.js 账号框已预填")
+
     if n:
         open(path, "w", encoding="utf-8").write(s)
     if not n:
