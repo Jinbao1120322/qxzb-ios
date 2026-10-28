@@ -49,7 +49,18 @@ jobs:
           xcodegen --version
 
       - name: Generate Xcode project
-        run: xcodegen generate
+        run: |
+          xcodegen generate
+          PBX=QXZB.xcodeproj/project.pbxproj
+          echo "--- 生成后格式 ---"
+          grep -E 'objectVersion|compatibilityVersion|preferredProjectObjectVersion' "$PBX" | head -5
+          # macos-14 默认 Xcode 15.4，不支持 objectVersion 77（Xcode 16 格式）；强制降级
+          sed -i '' -E 's/objectVersion = [0-9]+;/objectVersion = 56;/' "$PBX"
+          sed -i '' -E 's/compatibilityVersion = "Xcode [0-9.]+";/compatibilityVersion = "Xcode 14.0";/' "$PBX"
+          sed -i '' -E '/preferredProjectObjectVersion = [0-9]+;/d' "$PBX"
+          echo "--- 降级后 ---"
+          grep -E 'objectVersion|compatibilityVersion|preferredProjectObjectVersion' "$PBX" | head -5
+          plutil -lint QXZB.xcodeproj/project.pbxproj || true
 
       - name: Build (unsigned, device)
         run: |

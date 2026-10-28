@@ -1,6 +1,8 @@
 name: QXZB
 options:
   bundleIdPrefix: com.ishii
+  # runner 上是 Xcode 15.4，必须让 xcodegen 生成兼容格式（否则 objectVersion=77 打不开）
+  xcodeVersion: "15.4"
   deploymentTarget:
     iOS: "13.0"
   createIntermediateGroups: true

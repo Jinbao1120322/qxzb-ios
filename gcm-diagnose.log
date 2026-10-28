@@ -1,0 +1,350 @@
+﻿Diagnose log at 2026-10-27T23:44:05Z
+
+AppPath: C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\PortableGit\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\PortableGit\mingw64\bin\
+Version: 2.9.0+194ba290ce533465310d50f811684ab180536ae7
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 19045)
+Reading environment variables... OK
+ Variables:
+NODE_OPTIONS=--require="C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/app.asar.unpacked/cli/vendor/shim/node-language-shim.cjs"
+WORKBUDDY_CONFIG_DIR=C:\Users\Administrator\.workbuddy
+PROCESSOR_REVISION=9702
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+CODEBUDDY_A2A_OUTBOUND_ENABLED=0
+WINDIR=C:\Windows
+WORKBUDDY_VLM_AUTH_TOKEN=7ztmQz3EqGrftVOkezvFwAUTQBKE7bHNXNH96Y85-Io
+WECOM_MEDIA_UPLOAD_BASE_URL=
+CLIENT_INFO_PLATFORM_VERSION=5.9.2
+CODEBUDDY_SAFE_DELETE_REPORT_PATH=C:\Users\ADMINI~1\AppData\Local\Temp\codebuddy-safe-delete\report-12116-1793144644667-7cosplylmo.jsonl
+APPDATA=C:\Users\Administrator\AppData\Roaming
+WORKBUDDY_APP_VERSION=5.9.2
+PYTHONDONTWRITEBYTECODE=1
+CODEBUDDY_SAFE_DELETE_BROKER_DELETE=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-delete-broker-delete.cjs
+CODEBUDDY_DISABLE_BROWSER_MCP=1
+TENCENT_DOCS_LOCAL_SERVER=http://127.0.0.1:39099
+HGPAGER=cat
+EXEPATH=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\PortableGit\bin
+CODEBUDDY_CODE_EXPERIMENTAL_AGENT_TEAMS=0
+CODEBUDDY_DISABLE_CRON=1
+CLIENT_INFO_USER_AGENT_EXTENSION=CLI/2.165.0
+HTTP_PROXY=http://127.0.0.1:64399
+SYSTEMDRIVE=C:
+WECOM_CLI_ADDITIONAL_HEADERS_ENTERPRISE_TYPE={"X-WeCom-Enterprise-Type":"3"}
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+CODEBUDDY_FORCE_HEADLESS_BUNDLE=1
+SESSIONNAME=Console
+ProgramW6432=C:\Program Files
+CODEBUDDY_SERVICE_PROXY_URL=http://127.0.0.1:64381/internal/hooks/services/invoke
+BASH_FUNC_rm%%=() {  "${CODEBUDDY_SAFE_DELETE_BIN_DIR}/rm" "$@"
+}
+FPS_BROWSER_USER_PROFILE_STRING=Default
+WORKBUDDY_USER_DATA_DIR=C:\Users\Administrator\.workbuddy\app
+CODEBUDDY_HOST_CAPABILITIES=elicitation.form,weixinpay.interception
+IN_DOCKER=1
+WORKBUDDY_STARTUP_TIME=132933
+PYTHONPATH=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim
+CODEBUDDY_SKILL_TOOL_CHAR_BUDGET=30000
+MSYS=winsymlinks:nativestrict
+CODEBUDDY_GATEWAY_DISABLE_API_DOCS=1
+DriverData=C:\Windows\System32\Drivers\DriverData
+LOCALAPPDATA=C:\Users\Administrator\AppData\Local
+WORKBUDDY_APP_LIFETIME_JOB=Local\WBAppJob-10324-218e40cb2a979808
+CODEBUDDY_CONVERSATION_MESSAGE_ID=01a17fbfbbf277afbca0917f7b79cabd
+CODEBUDDY_INTERNET_ENVIRONMENT=internal
+CODEBUDDY_FILE_BACKUP_ENABLED=1
+WORKBUDDY_APPLICATION_NAME=WorkBuddy
+NO_UPDATE_NOTIFIER=1
+PATH=C;C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-bin;C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6;C:\Users\Administrator\.workbuddy\binaries\node\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12;C:\Users\Administrator\.workbuddy\binaries\python\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\node\cli-connector-packages;C:\Users\Administrator\.workbuddy\external-packages\pdf-cli;C;C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-bin;C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\PortableGit\mingw64\bin;C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\PortableGit\usr\bin;C:\Users\Administrator\bin;C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-bin;C:\Users\Administrator\.workbuddy\plugins\cache\workbuddy-builtin\weixinpay\1.6.110\bin;C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6;C:\Users\Administrator\.workbuddy\binaries\node\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12;C:\Users\Administrator\.workbuddy\binaries\python\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\node\cli-connector-packages;C:\Users\Administrator\.workbuddy\external-packages\pdf-cli;C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6;C:\Users\Administrator\.workbuddy\binaries\node\versions\.locks;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\.workbuddy\binaries\PortableGit\versions\1.3.0\bin;C:\Users\Administrator\.workbuddy\binaries\PortableGit\versions\1.3.0\usr\bin
+WORKBUDDY_MENU_LOCALE=zh-CN
+ACC_PRODUCT_CONFIG_PATH=C:\Users\ADMINI~1\AppData\Local\Temp\workbuddy-product-spill-3ixT3k\acc-product-config-v3.json
+CODEBUDDY_ENABLE_SECURITY_AUDIT=1
+CODEBUDDY_CONVERSATION_REQUEST_ID=01a17f9b0e597308bf63d004c4edd7c5
+WORKBUDDY_EXTRA_PATHS=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6;C:\Users\Administrator\.workbuddy\binaries\node\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12;C:\Users\Administrator\.workbuddy\binaries\python\versions\.locks;C:\Users\Administrator\.workbuddy\binaries\node\cli-connector-packages;C:\Users\Administrator\.workbuddy\external-packages\pdf-cli
+NODE_EXTRA_CA_CERTS=C:\Users\Administrator\.workbuddy\system-ca-bundle.pem
+CODEBUDDY_API_KEY_HELPER_DISABLED=1
+ProgramData=C:\ProgramData
+SYSTEMROOT=C:\Windows
+CODEBUDDY_INCLUDE_TOPIC_MESSAGE=1
+WORKBUDDY_DATA_FOLDER_NAME=.workbuddy
+SHLVL=1
+PROGRAMFILES=C:\Program Files
+PLAYWRIGHT_MCP_NO_SANDBOX=1
+WECOM_CLI_ADDITIONAL_HEADERS_CUSTOMER_USERID={"X-WeCom-Customer-Userid":"b19f1ee5-0d0e-4e55-9939-e1f46a9081a3"}
+AWS_PAGER=
+CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR=C:\Users\ADMINI~1\AppData\Local\Temp\codebuddy-safe-delete-bulk
+CODEBUDDY_CODE_DISABLE_SESSION_SUMMARY=1
+CLIENT_INFO_PRODUCT_NAME=WorkBuddy
+CODEBUDDY_HOST=workbuddy-desktop
+SANDBOX_IPC_TRACE_PARENT=ts-msg-46
+LOGONSERVER=\\LEIJI-20251128A
+USERNAME=Administrator
+USERPROFILE=C:\Users\Administrator
+WORKBUDDY_PAC_RPC_TOKEN=X3dyd4AJwdLA2DtbebNrFXXZ39hCXWm2
+SERVER__HOST=127.0.0.1
+CODEBUDDY_POWERSHELL_USE_PTY=1
+WORKBUDDY_DAEMON_CATALOG_STDIO=1
+GCM_INTERACTIVE=never
+WECOM_CLI_CONFIG_DIR=C:\Users\Administrator\.workbuddy\connectors\b19f1ee5-0d0e-4e55-9939-e1f46a9081a3\wecom-cli\personal
+CODEBUDDY_SAFE_DELETE_BIN_DIR=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-bin
+BASH_FUNC_rmdir%%=() {  "${CODEBUDDY_SAFE_DELETE_BIN_DIR}/rmdir" "$@"
+}
+SERVER__PORT=64381
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+LSBOX_AUDIT_SHMEM=Local\LiteSandbox_Audit_8340_77505328
+HOME=C:\Users\Administrator
+TRACEPARENT=00-5136dbd15353a33ea09cb345d6c4764a-6c0a6f3ebc2e8c62-01
+WORKBUDDY_VLM_CONTEXT=eyJzZXNzaW9uSWQiOiI2YmE0NzM1My1mMzQyLTQzYjgtYjBjNi1iNTZmYTE3NzA3NDgifQ.pyCJblVgME0thzDg1_emPIKSvUmyBlp9dh_jtnUhK_Q
+WORKBUDDY_APP_PATH=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar
+WORKBUDDY_PAC_RPC_SOCKET=\\.\pipe\workbuddy-pac-9816-dd9eeaffc3ec08cb
+BASH_ENV=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\shell-runtime-bash-env.sh
+PROCESSOR_ARCHITECTURE=AMD64
+WORKBUDDY_VLM_MODEL=kinfra-office-agent
+LESSHISTFILE=-
+CODEBUDDY_DISABLE_FORK_SUBAGENT=1
+LSBOX_SHMEM_NAME=Local\LiteSandbox_8340_6ba47353-f342-43b8-b0c6-b56fa1770748
+WORKBUDDY_CLIENT_USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) WorkBuddy/5.9.2 Chrome/138.0.7204.251 Electron/37.10.3 Safari/537.36
+CLIENT_INFO_PLATFORM=WorkBuddy
+LC_ALL=C.UTF-8
+CODEBUDDY_DISABLE_EXTENDED_PLUGIN_HOOKS=1
+PAGER=cat
+CODEBUDDY_BUILTIN_SKILLS_DIR=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\resources\plugins\workbuddy-builtin\skills
+TERM=dumb
+GIT_TRACE2_PARENT_SID=480d41ca-1f44-41c2-98a9-bd41b79b1cd5
+USERDOMAIN=LEIJI-20251128A
+CODEBUDDY_DISABLE_AUTO_MEMORY=1
+CODEBUDDY_SKIP_GIT_BASH_CHECK=1
+CODEBUDDY_SESSION_ID=6ba47353-f342-43b8-b0c6-b56fa1770748
+BAGGAGE=buddyId=,buddyName=,codebuddy.session_id=6ba47353-f342-43b8-b0c6-b56fa1770748,codebuddy.conversation_request_id=01a17f9b0e597308bf63d004c4edd7c5,codebuddy.conversation_message_id=01a17fbfbbf277afbca0917f7b79cabd,codebuddy.root_request_id=01a17f9b0e597308bf63d004c4edd7c5
+CODEBUDDY_SAFE_DELETE_BULK_GUARD=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\safe-delete-bulk-guard.cjs
+WORKBUDDY_APP_NAME=WorkBuddy
+CODEBUDDY_DISABLE_SYSTEM_REMINDER_MD=1
+WORKBUDDY_APP_DEEPLINK_SCHEME=workbuddy
+CODEBUDDY_DISABLE_REQUEST_VALIDATION=1
+CODEBUDDY_FORCE_LITE_WB_BUNDLE=1
+HOMEPATH=\Users\Administrator
+SANDBOX_IPC_TRACE_SESSION=6ba47353-f342-43b8-b0c6-b56fa1770748
+GALILEO_SDK_READY=1
+CODEBUDDY_A2A_TRUSTED_RESULTS=
+CODEBUDDY_GIT_REPO_SCAN_DISABLED=1
+PLINK_PROTOCOL=ssh
+WORKBUDDY_PROMPT_TEMPLATES_DIR=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\app.asar.unpacked\resources\templates
+WORKBUDDY_IS_PACKAGED=1
+WORKBUDDY_RESOURCES_PATH=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources
+MSYSTEM=MINGW64
+CODEBUDDY_CODE_GIT_BASH_PATH=C:\Users\Administrator\.workbuddy\binaries\PortableGit\versions\1.3.0\bin\bash.exe
+TENCENT_DOCS_LOCAL_MCP=http://127.0.0.1:39099/mcp
+PROCESSOR_LEVEL=6
+CODEBUDDY_CURRENT_MODEL_ID=deepseek-v4.1-flash
+HTTPS_PROXY=http://127.0.0.1:64399
+GIT_TERMINAL_PROMPT=0
+ProgramFiles(x86)=C:\Program Files (x86)
+CODEBUDDY_DISABLE_SESSION_HISTORY_CLEANUP=1
+CLIENT_INFO_IDE_TYPE=WorkBuddy
+CODEBUDDY_MCP_CONFIG={"mcpServers":{"connector-proxy":{"type":"http","url":"http://127.0.0.1:57028/mcp","headers":{"Authorization":"Bearer MBfIgsMAEopBx_MpDhnLOCXFkHZNhlxtEh-wDYQI5MI","X-WorkBuddy-MCP-Context":"eyJzZXNzaW9uSWQiOiI2YmE0NzM1My1mMzQyLTQzYjgtYjBjNi1iNTZmYTE3NzA3NDgiLCJ3ZWxjb21lTW9kZSI6IndvcmtpbmciLCJ3b3Jrc3BhY2UiOiJDOi9Vc2Vycy9BZG1pbmlzdHJhdG9yL1dvcmtCdWRkeS8yMDI2LTEwLTI3LTIzLTQ2LTI5IiwiYWxsb3dlZEJ1aWx0aW5Ub29scyI6WyJhZ2VudF9tYWlsX2Rvd25sb2FkX2F0dGFjaG1lbnQiLCJhZ2VudF9tYWlsX3VwbG9hZF9hdHRhY2htZW50IiwiYXV0b21hdGlvbl91cGRhdGUiLCJjb25uZWN0X2Nsb3VkX3NlcnZpY2UiLCJjb25uZWN0X29wZW5fcGxhdGZvcm0iLCJjb252ZXJzYXRpb25fc2VhcmNoIiwiZG9tYWluX3NlYXJjaCIsImltX2dldF9tZXNzYWdlcyIsImltX2xpc3RfY29udmVyc2F0aW9ucyIsImtub3dsZWRnZV9zZWFyY2giLCJsaXN0X2luc3RhbGxlZF9wbHVnaW5zIiwicHJlc2VudF9maWxlcyIsInJlY29ubmVjdF9wbHVnaW4iLCJzZWFyY2hfYW5kX2luc3RhbGxfc2tpbGxzIiwic2VhcmNoX3BsdWdpbnMiLCJzaG93X3dpZGdldCIsInNraWxsX21hbmFnZW1lbnQiLCJzdWdnZXN0X3BsdWdpbl9pbnN0YWxsIiwidW5pbnN0YWxsX3BsdWdpbiIsIndpZGdldF9ndWlkZWxpbmVzIiwid29ya2J1ZGR5X2FwcF9zZXRfY29udmVyc2F0aW9uX3RpdGxlIiwid29ya2J1ZGR5X2Nsb3VkX3NlcnZpY2UiLCJ3b3JrYnVkZHlfbWluaXByb2dyYW1fc2NhZmZvbGQiLCJ3b3JrYnVkZHlfc2l0ZXNfZGVwbG95Iiwid29ya2J1ZGR5X3NpdGVzX3VucHVibGlzaCJdfQ.iFaS4DNm-kC_pNQYi1WL635df7SMa2xoUkaB9yfPuaE"},"defer_loading":false,"tools":{"automation_update":{"bare_name":true,"defer_loading":false,"prompt_cache_stability":"stable"},"present_files":{"bare_name":true,"defer_loading":false,"prompt_cache_stability":"stable","tool_control_id":"builtin:present_files"},"connect_cloud_service":{"bare_name":true,"defer_loading":true},"connect_open_platform":{"bare_name":true,"defer_loading":true},"workbuddy_miniprogram_scaffold":{"bare_name":true,"defer_loading":true,"prompt_cache_stability":"stable"},"widget_guidelines":{"bare_name":true,"defer_loading":false,"prompt_cache_stability":"stable","tool_control_id":"builtin:widget_guidelines","tool_control_compatibility_ids":["builtin:read_me"]},"read_me":{"bare_name":true,"defer_loading":false,"prompt_cache_stability":"stable","tool_control_id":"builtin:widget_guidelines","tool_control_compatibility_ids":["builtin:read_me"]},"show_widget":{"bare_name":true,"defer_loading":false,"prompt_cache_stability":"stable","tool_control_id":"builtin:show_widget"},"domain_search":{"bare_name":true,"defer_loading":true,"tool_control_id":"mcp:connector-proxy:domain_search","tool_control_compatibility_ids":["mcp:connector-proxy:agentic_search"]},"conversation_search":{"bare_name":true,"defer_loading":true},"workbuddy_app_set_conversation_title":{"bare_name":true,"defer_loading":true,"prompt_cache_stability":"stable"},"search_and_install_skills":{"bare_name":true,"defer_loading":true},"skill_management":{"bare_name":true,"defer_loading":true},"agent_mail_upload_attachment":{"bare_name":true,"defer_loading":true},"agent_mail_download_attachment":{"bare_name":true,"defer_loading":true},"workbuddy_sites_deploy":{"bare_name":true,"defer_loading":true},"workbuddy_sites_unpublish":{"bare_name":true,"defer_loading":true},"workbuddy_cloud_service":{"bare_name":true,"defer_loading":true},"knowledge_search":{"bare_name":true,"defer_loading":true},"im_list_conversations":{"bare_name":true,"defer_loading":true},"im_get_messages":{"bare_name":true,"defer_loading":true},"search_plugins":{"bare_name":true,"defer_loading":true},"suggest_plugin_install":{"bare_name":true,"defer_loading":true},"list_installed_plugins":{"bare_name":true,"defer_loading":true},"uninstall_plugin":{"bare_name":true,"defer_loading":true},"reconnect_plugin":{"bare_name":true,"defer_loading":true}},"transparent_proxy":true,"builtin_tools":["automation_update","present_files","connect_cloud_service","connect_open_platform","workbuddy_miniprogram_scaffold","widget_guidelines","show_widget","domain_search","conversation_search","workbuddy_app_set_conversation_title","search_and_install_skills","skill_management","agent_mail_upload_attachment","agent_mail_download_attachment","workbuddy_sites_deploy","workbuddy_sites_unpublish","workbuddy_cloud_service","knowledge_search","im_list_conversations","im_get_messages","search_plugins","suggest_plugin_install","list_installed_plugins","uninstall_plugin","reconnect_plugin"]},"agent-mail":{"type":"http","url":"http://127.0.0.1:57028/a9bcc7dd302f2b262507f7590d97b1b4/mcp","headers":{"Authorization":"Bearer vIGCiTclIPzs3lJWK74qKe03wsq7xq68M9r3cjArUKs","X-WorkBuddy-MCP-Context":"eyJzZXNzaW9uSWQiOiI2YmE0NzM1My1mMzQyLTQzYjgtYjBjNi1iNTZmYTE3NzA3NDgiLCJ3ZWxjb21lTW9kZSI6IndvcmtpbmciLCJ3b3Jrc3BhY2UiOiJDOi9Vc2Vycy9BZG1pbmlzdHJhdG9yL1dvcmtCdWRkeS8yMDI2LTEwLTI3LTIzLTQ2LTI5IiwiYWxsb3dlZEJ1aWx0aW5Ub29scyI6WyJhZ2VudF9tYWlsX2Rvd25sb2FkX2F0dGFjaG1lbnQiLCJhZ2VudF9tYWlsX3VwbG9hZF9hdHRhY2htZW50IiwiYXV0b21hdGlvbl91cGRhdGUiLCJjb25uZWN0X2Nsb3VkX3NlcnZpY2UiLCJjb25uZWN0X29wZW5fcGxhdGZvcm0iLCJjb252ZXJzYXRpb25fc2VhcmNoIiwiZG9tYWluX3NlYXJjaCIsImltX2dldF9tZXNzYWdlcyIsImltX2xpc3RfY29udmVyc2F0aW9ucyIsImtub3dsZWRnZV9zZWFyY2giLCJsaXN0X2luc3RhbGxlZF9wbHVnaW5zIiwicHJlc2VudF9maWxlcyIsInJlY29ubmVjdF9wbHVnaW4iLCJzZWFyY2hfYW5kX2luc3RhbGxfc2tpbGxzIiwic2VhcmNoX3BsdWdpbnMiLCJzaG93X3dpZGdldCIsInNraWxsX21hbmFnZW1lbnQiLCJzdWdnZXN0X3BsdWdpbl9pbnN0YWxsIiwidW5pbnN0YWxsX3BsdWdpbiIsIndpZGdldF9ndWlkZWxpbmVzIiwid29ya2J1ZGR5X2FwcF9zZXRfY29udmVyc2F0aW9uX3RpdGxlIiwid29ya2J1ZGR5X2Nsb3VkX3NlcnZpY2UiLCJ3b3JrYnVkZHlfbWluaXByb2dyYW1fc2NhZmZvbGQiLCJ3b3JrYnVkZHlfc2l0ZXNfZGVwbG95Iiwid29ya2J1ZGR5X3NpdGVzX3VucHVibGlzaCJdfQ.iFaS4DNm-kC_pNQYi1WL635df7SMa2xoUkaB9yfPuaE"},"_workbuddyUpstreamOrigin":"https://www.workbuddy.cn","defer_loading":true},"genie-baas":{"type":"http","url":"http://127.0.0.1:57028/881f8b0f3d2c03fadb7743e0aaca8a28/mcp","headers":{"Authorization":"Bearer KNVAWMQ1BT-XRjCEV1InrAVN_AKunkkhkWCoC3OtgWc","X-WorkBuddy-MCP-Context":"eyJzZXNzaW9uSWQiOiI2YmE0NzM1My1mMzQyLTQzYjgtYjBjNi1iNTZmYTE3NzA3NDgiLCJ3ZWxjb21lTW9kZSI6IndvcmtpbmciLCJ3b3Jrc3BhY2UiOiJDOi9Vc2Vycy9BZG1pbmlzdHJhdG9yL1dvcmtCdWRkeS8yMDI2LTEwLTI3LTIzLTQ2LTI5IiwiYWxsb3dlZEJ1aWx0aW5Ub29scyI6WyJhZ2VudF9tYWlsX2Rvd25sb2FkX2F0dGFjaG1lbnQiLCJhZ2VudF9tYWlsX3VwbG9hZF9hdHRhY2htZW50IiwiYXV0b21hdGlvbl91cGRhdGUiLCJjb25uZWN0X2Nsb3VkX3NlcnZpY2UiLCJjb25uZWN0X29wZW5fcGxhdGZvcm0iLCJjb252ZXJzYXRpb25fc2VhcmNoIiwiZG9tYWluX3NlYXJjaCIsImltX2dldF9tZXNzYWdlcyIsImltX2xpc3RfY29udmVyc2F0aW9ucyIsImtub3dsZWRnZV9zZWFyY2giLCJsaXN0X2luc3RhbGxlZF9wbHVnaW5zIiwicHJlc2VudF9maWxlcyIsInJlY29ubmVjdF9wbHVnaW4iLCJzZWFyY2hfYW5kX2luc3RhbGxfc2tpbGxzIiwic2VhcmNoX3BsdWdpbnMiLCJzaG93X3dpZGdldCIsInNraWxsX21hbmFnZW1lbnQiLCJzdWdnZXN0X3BsdWdpbl9pbnN0YWxsIiwidW5pbnN0YWxsX3BsdWdpbiIsIndpZGdldF9ndWlkZWxpbmVzIiwid29ya2J1ZGR5X2FwcF9zZXRfY29udmVyc2F0aW9uX3RpdGxlIiwid29ya2J1ZGR5X2Nsb3VkX3NlcnZpY2UiLCJ3b3JrYnVkZHlfbWluaXByb2dyYW1fc2NhZmZvbGQiLCJ3b3JrYnVkZHlfc2l0ZXNfZGVwbG95Iiwid29ya2J1ZGR5X3NpdGVzX3VucHVibGlzaCJdfQ.iFaS4DNm-kC_pNQYi1WL635df7SMa2xoUkaB9yfPuaE"},"_workbuddyUpstreamOrigin":"https://www.workbuddy.cn","defer_loading":true},"space-library":{"type":"http","url":"http://127.0.0.1:57028/0b8f5f14172de5580e8d9284b1a47044/mcp","headers":{"Authorization":"Bearer U-guKsX8PKdxDyU6LvXgsMe1c0btWWhD_BthDIHmGFQ","X-WorkBuddy-MCP-Context":"eyJzZXNzaW9uSWQiOiI2YmE0NzM1My1mMzQyLTQzYjgtYjBjNi1iNTZmYTE3NzA3NDgiLCJ3ZWxjb21lTW9kZSI6IndvcmtpbmciLCJ3b3Jrc3BhY2UiOiJDOi9Vc2Vycy9BZG1pbmlzdHJhdG9yL1dvcmtCdWRkeS8yMDI2LTEwLTI3LTIzLTQ2LTI5IiwiYWxsb3dlZEJ1aWx0aW5Ub29scyI6WyJhZ2VudF9tYWlsX2Rvd25sb2FkX2F0dGFjaG1lbnQiLCJhZ2VudF9tYWlsX3VwbG9hZF9hdHRhY2htZW50IiwiYXV0b21hdGlvbl91cGRhdGUiLCJjb25uZWN0X2Nsb3VkX3NlcnZpY2UiLCJjb25uZWN0X29wZW5fcGxhdGZvcm0iLCJjb252ZXJzYXRpb25fc2VhcmNoIiwiZG9tYWluX3NlYXJjaCIsImltX2dldF9tZXNzYWdlcyIsImltX2xpc3RfY29udmVyc2F0aW9ucyIsImtub3dsZWRnZV9zZWFyY2giLCJsaXN0X2luc3RhbGxlZF9wbHVnaW5zIiwicHJlc2VudF9maWxlcyIsInJlY29ubmVjdF9wbHVnaW4iLCJzZWFyY2hfYW5kX2luc3RhbGxfc2tpbGxzIiwic2VhcmNoX3BsdWdpbnMiLCJzaG93X3dpZGdldCIsInNraWxsX21hbmFnZW1lbnQiLCJzdWdnZXN0X3BsdWdpbl9pbnN0YWxsIiwidW5pbnN0YWxsX3BsdWdpbiIsIndpZGdldF9ndWlkZWxpbmVzIiwid29ya2J1ZGR5X2FwcF9zZXRfY29udmVyc2F0aW9uX3RpdGxlIiwid29ya2J1ZGR5X2Nsb3VkX3NlcnZpY2UiLCJ3b3JrYnVkZHlfbWluaXByb2dyYW1fc2NhZmZvbGQiLCJ3b3JrYnVkZHlfc2l0ZXNfZGVwbG95Iiwid29ya2J1ZGR5X3NpdGVzX3VucHVibGlzaCJdfQ.iFaS4DNm-kC_pNQYi1WL635df7SMa2xoUkaB9yfPuaE"},"_workbuddyUpstreamOrigin":"https://www.workbuddy.cn","defer_loading":true},"weixinpay":{"type":"stdio","command":"C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\weixinpay\\1.6.110/bin/run-node","args":["C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\weixinpay\\1.6.110/dist/mcp-server.mjs"],"env":{"WECHATPAY_PAYSIGN_SERVICE_ID":"agentpay","CLAUDE_PLUGIN_ROOT":"C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\weixinpay\\1.6.110","CODEBUDDY_PLUGIN_ROOT":"C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\weixinpay\\1.6.110","CLAUDE_PLUGIN_DATA":"C:\\Users\\Administrator\\.workbuddy\\plugins\\data\\weixinpay-workbuddy-builtin","CODEBUDDY_PLUGIN_DATA":"C:\\Users\\Administrator\\.workbuddy\\plugins\\data\\weixinpay-workbuddy-builtin","CODEBUDDY_PROJECT_DIR":"C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29","CLAUDE_PROJECT_DIR":"C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29"},"defer_loading":true},"sheetagent":{"type":"stdio","command":"node","args":["C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\sheetagent\\5.6.2-wb.39298511.g37a65c0b.he233403f909a/mcp/start.mjs"],"env":{"SHEETAGENT_MCP_TRANSPORT":"stdio","SHEET_MCP_DEBUG":"0","SHEETAGENT_LOG_LEVEL":"info","SHEET_API_MODE":"local","SHEET_REMOTE_MCP_URL":"https://docs.qq.com/api/v6/sheet/mcp","CLAUDE_PLUGIN_ROOT":"C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\sheetagent\\5.6.2-wb.39298511.g37a65c0b.he233403f909a","CODEBUDDY_PLUGIN_ROOT":"C:\\Users\\Administrator\\.workbuddy\\plugins\\cache\\workbuddy-builtin\\sheetagent\\5.6.2-wb.39298511.g37a65c0b.he233403f909a","CLAUDE_PLUGIN_DATA":"C:\\Users\\Administrator\\.workbuddy\\plugins\\data\\sheetagent-workbuddy-builtin","CODEBUDDY_PLUGIN_DATA":"C:\\Users\\Administrator\\.workbuddy\\plugins\\data\\sheetagent-workbuddy-builtin","CODEBUDDY_PROJECT_DIR":"C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29","CLAUDE_PROJECT_DIR":"C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29"},"defer_loading":true}}}
+COMPUTERNAME=LEIJI-20251128A
+CODEBUDDY_REMOTE_AGENTS_URL=
+CODEBUDDY_CODE_IMAGE_COMPRESSION_MAX_DIMENSION=1080
+LESSCHARSET=utf-8
+CODEBUDDY_SAFE_DELETE_SANDBOX=1
+WORKBUDDY_PRODUCT_NAME=WorkBuddy
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+GALILEO_ENABLE=true
+DISABLE_AUTOUPDATER=1
+MANPAGER=cat
+GIT_PAGER=cat
+CODEBUDDY_DISABLE_IDE=1
+SANDBOX_CENTER_IPC_ADDRESS=\\.\pipe\WorkBuddy_SandboxCenter_5195f984cffa3c4a_10324
+CommonProgramW6432=C:\Program Files\Common Files
+DISABLE_TELEMETRY=0
+CODEBUDDY_QIMEI36=1508c2c39d689f08b6023bb930001791a101
+OS=Windows_NT
+CODEBUDDY_GATEWAY_AUTH=password
+https_proxy=http://127.0.0.1:64399
+CODEBUDDY_COMMAND_APPROVAL_PATTERNS=[{"pattern":"buddy-image-processing.py","approvalKind":"imageProcessing","skillName":"buddy-image-processing"}]
+CODEBUDDY_DOCUMENT_BACKUP_ERROR=Document backup turn has ended
+POWERSHELL_TELEMETRY_OPTOUT=1
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+BASH_FUNC_unlink%%=() {  "${CODEBUDDY_SAFE_DELETE_BIN_DIR}/unlink" "$@"
+}
+CODEBUDDY_NODE_BIN=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\node.exe
+CLIENT_INFO_PLUGIN_VERSION=5.9.2
+editor_sdk_port=39099
+GENIE_TRASH_DIR=C:\Users\Administrator\AppData\Local\Programs\WorkBuddy\resources\vendor\genie-trash
+CODEBUDDY_ROOT_REQUEST_ID=01a17f9b0e597308bf63d004c4edd7c5
+TEMP=C:\Users\ADMINI~1\AppData\Local\Temp
+PWD=C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29/qxzb-ios
+WECOM_CLI_ADDITIONAL_HEADERS_AGENT_TICKET={"X-WeCom-Agent-Ticket":"agt1-A5h87XdpSRxhYtWdFwpD2BXBE_ESOpKzeuzz5qN0bnOaeZ9G_HuUEyZqruNBdCIwMeBy_NTYhiPGGO6GItFLKasdQ9VsvUqkPy3ZmKWDZyQ0xqIVbGzqtFJnP3J27TNyFeGUGlM2MZ1TqFgDQBWqOhs0GtOaP8ZtTgisV_Nlp-I"}
+PYTHONIOENCODING=utf-8
+CODEBUDDY_ARTIFACTS=C:\Users\ADMINI~1\AppData\Local\Temp\codebuddy-artifacts\report-12116-1793144644644-iel0dr16v3i.jsonl
+BROWSER_USE_CHROMIUM_SANDBOX=false
+OLDPWD=C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29
+CODEBUDDY_GATEWAY_PASSWORD=QlrV4eTTgqw3PzFxO34LN16cwvb6Nvm01Jhe-cjGpBY
+CLAUDE_PROJECT_DIR=C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29
+ACC_PRODUCT_CONFIG_V3=
+ACC_PRODUCT_CONFIG_V2=
+WORKBUDDY_FS_PROTECTION_ROLE=daemon
+CODEBUDDY_PROJECT_DIR=C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29
+WECOM_MEDIA_API_EXTRA_QUERY=
+SANDBOX_CENTER_UID=b19f1ee5-0d0e-4e55-9939-e1f46a9081a3
+CODEBUDDY_ENV_FILE=C:\Users\Administrator\.workbuddy\cli-env\wecom-cli.sh
+CODEBUDDY_HIGH_CREDIT_APPROVAL_ENABLED=1
+NUMBER_OF_PROCESSORS=12
+CODEBUDDY_DISABLE_PRODUCT_CACHE=1
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+WORKBUDDY_VLM_CHAT_URL=http://127.0.0.1:57067/skills/vlm/chat
+WORKBUDDY_STARTUP_DATE=2026-10-27
+WORKBUDDY_LOCALE=zh-CN
+ALLUSERSPROFILE=C:\ProgramData
+SYSTEMD_PAGER=cat
+HOMEDRIVE=C:
+AGENT_BROWSER_ARGS=--no-sandbox
+PUBLIC=C:\Users\Public
+CLIENT_INFO_PRODUCT_VERSION=5.9.2
+CLAUDE_SESSION_ID=6ba47353-f342-43b8-b0c6-b56fa1770748
+WORKBUDDY_NODE_ENV=production
+CODEBUDDY_TOOL_CALL_ID=call_00_Pf8fEofh3nXisEoUYXyL5554
+http_proxy=http://127.0.0.1:64399
+LANG=en_US.UTF-8
+WORKBUDDY_GPU_DEVICE_NAME=NVIDIA GeForce RTX 3060 Ti
+WORKBUDDY_STARTUP_PID=10324
+CODEBUDDY_APPROVAL_MEMORY_GROUPS={"miora-image":["mcp__miora__miora_text_to_image","mcp__miora__miora_edit_image"],"miora-video":["mcp__miora__miora_text_to_video","mcp__miora__miora_frame_to_video","mcp__miora__miora_reference_to_video"]}
+USERDOMAIN_ROAMINGPROFILE=LEIJI-20251128A
+TMP=C:\Users\ADMINI~1\AppData\Local\Temp
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+CODEBUDDY_SAFE_DELETE_ENABLED=1
+COMSPEC=C:\Windows\system32\cmd.exe
+CODEBUDDY_REPLAY_SHOW_PRE_COMPACT=1
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+_=C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/mingw64/bin/git-credential-manager
+CODEBUDDY_ALWAYS_APPROVAL_OVERRIDES_HOOK_ASK=1
+PYTHONUTF8=1
+CODEBUDDY_SKILL_DESC_MAX_OVERRIDES={"workbuddy-browser-use":300,"workbuddy-computer-use":600,"weixinpay-pay":300,"wecom-unified":600,"workbuddy-office-routing":300,"workbuddy-pptx":300,"tencent-pptx":300,"workbuddy-docx":300,"workbuddy-sheet-generation":300,"workbuddy-sheetagent":300,"workbuddy-pdf":300,"workbuddy-local-office-edit":300,"tencent-docs-routing":300,"tencent-docx":300,"tencent-docs-sheet-generation":300,"tencent-docs-sheetagent":300,"wecom-wedrive-reference":300}
+ELECTRON_RUN_AS_NODE=1
+CODEBUDDY_PROMPT_SUGGESTION_DISABLED=1
+CODEBUDDY_REASONING_ONLY_END_TURN=1
+CLIENT_INFO_MACHINE_ID=ccdf22c1-a1f7-44f3-b6fe-6e94676facaf
+CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD=50
+TMPDIR=C:\Users\ADMINI~1\AppData\Local\Temp
+CLIENT_INFO_PLUGIN_NAME=workbuddy-desktop
+ACC_PRODUCT_CONFIG=
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\Administrator\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\Administrator\AppData\Local\Temp\34624feaa106aa79dda08bc7'... OK
+Reading from temporary file 'C:\Users\Administrator\AppData\Local\Temp\34624feaa106aa79dda08bc7'... OK
+Deleting temporary file 'C:\Users\Administrator\AppData\Local\Temp\34624feaa106aa79dda08bc7'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\Administrator
+UserDataDirectoryPath: C:\Users\Administrator\.gcm
+GetCurrentDirectory(): C:\Users\Administrator\WorkBuddy\2026-10-27-23-46-29\qxzb-ios
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:49827/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.55.0.windows.3'
+Locating current repository...Git repository at 'C:/Users/Administrator/WorkBuddy/2026-10-27-23-46-29/qxzb-ios/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	core.symlinks=false
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	core.autocrlf=true
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	core.fscache=true
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	color.interactive=true
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	color.ui=auto
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	help.format=html
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	rebase.autosquash=true
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	filter.lfs.required=true
+file:C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/etc/gitconfig	credential.helper=manager
+file:C:/Users/Administrator/.gitconfig	credential.helper=
+file:C:/Users/Administrator/.gitconfig	credential.helper=C:/Users/Administrator/AppData/Local/Programs/WorkBuddy/resources/vendor/PortableGit/mingw64/bin/git-credential-manager.exe
+file:C:/Users/Administrator/.gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	user.name=ishii
+file:.git/config	user.email=ishii@local
+file:.git/config	remote.origin.url=https://github.com/Jinbao1120322/qxzb-ios.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\Administrator\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\Administrator\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
