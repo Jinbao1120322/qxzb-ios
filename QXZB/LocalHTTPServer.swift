@@ -21,6 +21,12 @@ final class LocalHTTPServer {
     private let queue = DispatchQueue(label: "qxzb.http.server", qos: .userInitiated)
     private var reported = false
 
+    /// 固定端口。
+    /// WKWebView 的 localStorage / IndexedDB 是按 origin（scheme + host + port）隔离的，
+    /// 端口每次随机 → 每次启动都是新 origin → 游戏存档写进去下次读不回来。
+    /// 固定在 18760，保证 origin 始终是 http://127.0.0.1:18760 才能持久化。
+    static let preferredPort: UInt16 = 18760
+
     var baseURL: URL? {
         guard port > 0 else { return nil }
         return URL(string: "http://127.0.0.1:\(port)/")
@@ -34,8 +40,17 @@ final class LocalHTTPServer {
                 self.overlay = std
             }
         }
+        listen(on: Self.preferredPort, allowFallback: true, completion: completion)
+    }
+
+    private func listen(on wanted: UInt16?, allowFallback: Bool, completion: @escaping (UInt16?) -> Void) {
         do {
-            let l = try NWListener(using: .tcp)
+            let l: NWListener
+            if let p = wanted, let np = NWEndpoint.Port(rawValue: p) {
+                l = try NWListener(using: .tcp, on: np)
+            } else {
+                l = try NWListener(using: .tcp)
+            }
             l.newConnectionHandler = { [weak self] conn in
                 self?.handle(conn)
             }
@@ -46,10 +61,21 @@ final class LocalHTTPServer {
                     self.port = l.port?.rawValue ?? 0
                     QLog("HTTP server ready port=\(self.port) root=\(self.root.path)")
                     QLog("overlay = \(self.overlay?.path ?? "(未启用，全部读 App 内置)")")
+                    if let p = wanted, self.port != p {
+                        QLog("警告: 期望端口 \(p)，实际 \(self.port)，本次 localStorage 与上次不共享")
+                    }
                     completion(self.port)
                 case .failed(let err):
-                    QLog("HTTP server failed: \(err)")
-                    completion(nil)
+                    QLog("HTTP server failed on port \(wanted ?? 0): \(err)")
+                    if allowFallback {
+                        // 固定端口被占用（上一次没释放干净）：退回随机端口，先保证能跑
+                        self.listener?.cancel()
+                        self.listener = nil
+                        QLog("回退到随机端口，本次启动的存档不可见（下次启动会重试 18760）")
+                        self.listen(on: nil, allowFallback: false, completion: completion)
+                    } else {
+                        completion(nil)
+                    }
                 case .cancelled:
                     QLog("HTTP server cancelled")
                 default:
@@ -60,7 +86,11 @@ final class LocalHTTPServer {
             listener = l
         } catch {
             QLog("HTTP server create error: \(error)")
-            completion(nil)
+            if allowFallback {
+                listen(on: nil, allowFallback: false, completion: completion)
+            } else {
+                completion(nil)
+            }
         }
     }
 
